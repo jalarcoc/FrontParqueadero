@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Bienvenido al  {{ title }}!
+  </h1>
+  <img width="300" src="logo-ceiba.png" alt="Ceiba Logo"> 
+  </div>
+  <h2>Acciones</h2>
+  <div class="container">
+      <div class="row"> 
+        <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+          <li><a routerLink= "/moto/ingreso" >Ingresar Moto</a></li>
+          <li><a routerLink= "/carro/ingreso" >Ingresar Carro</a></li>
+          <li><a routerLink = "/listar/vehiculos">Listar Vehiculos</a></li>
+          <li><a routerLink= "/vehiculo/salida" >Dar Salida a Vehiculos</a></li>
+        </ul>
+      </nav>
+    </div>
+    <hr/>
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+
+    
