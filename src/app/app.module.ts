@@ -17,6 +17,7 @@ import { ListarVehiculosService } from './listar-vehiculos.service';
 import { CarroService } from './carro.service';
 import { MotoService } from './moto.service';
 import { SalidaService } from './salida.service';
+import { AlertsModule } from 'angular-alert-module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { SalidaService } from './salida.service';
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [ListarVehiculosService, CarroService, MotoService, SalidaService],
   bootstrap: [AppComponent]

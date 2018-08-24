@@ -9,6 +9,7 @@ import { MotoService } from '../moto.service';
 })
 export class IngresoMotoComponent implements OnInit {
 
+  mensaje: string;
   public moto={
     placa:'', cilindraje:''
   }
@@ -22,8 +23,29 @@ export class IngresoMotoComponent implements OnInit {
   }
 
   ingresoMoto(obj){
-        this. _service.create(obj.moto).subscribe(res=>{
-      this._router.navigate(['/listar/vehiculos']);
-    });
+        this. _service.create(obj.moto).subscribe(
+        response=>this.goodCase(response),
+        error=>this.badCase(error), 
+        ()=>this.finallyCase());
+
+      ;
   }
+
+goodCase(response){
+  console.log("All was fine");
+
+}
+
+badCase(error){
+  console.log("Something was wrong...");
+  console.error(error);
+  this.mensaje = error;
+
+}
+finallyCase(){
+  console.log("This is the final instruction to execute....");
+  this._router.navigate(['/listar/vehiculos'])
+}
+
+
 }
